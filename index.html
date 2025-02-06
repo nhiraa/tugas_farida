@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <h1>Daftar Pegawai</h1>
+    <table id="pegawaiTable" >
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Nama</th>
+                <th>Jabatan</th>
+                <th>Departemen</th>
+                <th>Gaji</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data akan diisi menggunakan JavaScript -->
+        </tbody>
+    </table>
+
+    <script>
+        // Data pegawai dalam bentuk array
+        const pegawai = [
+            { nama: 'Aura', jabatan: 'Manager', departemen: 'Keuangan', gaji: 'Rp15.000.000' },
+            { nama: 'Syekhah', jabatan: 'Supervisor', departemen: 'Pemasaran', gaji: 'Rp10.000.000' },
+            { nama: 'Kaisa', jabatan: 'Staff', departemen: 'Teknologi Informasi', gaji: 'Rp8.000.000' },
+            { nama: 'Ghaida', jabatan: 'Staff', departemen: 'Sumber Daya Manusia', gaji: 'Rp7.500.000' },
+            { nama: 'Ghazni', jabatan: 'Analyst', departemen: 'Operasional', gaji: 'Rp9.000.000' }
+        ];
+
+        // Mengambil elemen tbody dari tabel
+        const tbody = document.getElementById('pegawaiTable').querySelector('tbody');
+
+        // Mengisi tabel dengan data pegawai
+        pegawai.forEach((item, index) => {
+            const row = document.createElement('tr');
+
+            row.innerHTML = `
+                <td>${index + 1}</td>
+                <td>${item.nama}</td>
+                <td>${item.jabatan}</td>
+                <td>${item.departemen}</td>
+                <td>${item.gaji}</td>
+            `;
+
+            tbody.appendChild(row);
+        });
+    </script>
+</body>
+</html>
+
+    </script>
+</body>
+</html>
